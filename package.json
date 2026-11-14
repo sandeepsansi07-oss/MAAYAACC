@@ -25,8 +25,7 @@
       "target": [
         { "target": "nsis", "arch": ["x64"] },
         { "target": "portable", "arch": ["x64"] }
-      ],
-      "artifactName": "MAYAACC-${version}-${target}.${ext}"
+      ]
     },
     "nsis": {
       "oneClick": false,
@@ -34,7 +33,11 @@
       "allowToChangeInstallationDirectory": true,
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
-      "shortcutName": "MAYAACC"
+      "shortcutName": "MAYAACC",
+      "artifactName": "MAYAACC-Setup-${version}.exe"
+    },
+    "portable": {
+      "artifactName": "MAYAACC-Portable-${version}.exe"
     }
   }
 }
