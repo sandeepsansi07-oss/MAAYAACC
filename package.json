@@ -1,0 +1,40 @@
+{
+  "name": "mayaacc",
+  "productName": "MAYAACC",
+  "version": "1.0.0",
+  "description": "MAYAACC - Accounting, Inventory and Payroll software",
+  "main": "main.js",
+  "author": "SANDY",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win --publish never"
+  },
+  "devDependencies": {
+    "electron": "^31.7.7",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.mayaacc.desktop",
+    "productName": "MAYAACC",
+    "copyright": "Copyright (c) SANDY",
+    "directories": { "output": "dist", "buildResources": "build" },
+    "files": ["main.js", "preload.js", "app/**/*", "build/icon.png"],
+    "win": {
+      "icon": "build/icon.ico",
+      "target": [
+        { "target": "nsis", "arch": ["x64"] },
+        { "target": "portable", "arch": ["x64"] }
+      ],
+      "artifactName": "MAYAACC-${version}-${target}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "MAYAACC"
+    }
+  }
+}
